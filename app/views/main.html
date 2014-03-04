@@ -11,7 +11,8 @@
   <div ui-jq="dropzone" ui-options="dropzoneConfig" class="dropzone">
     <div class="dz-message text-center">
       <h1>Upload TIDAL JSON Output</h1>
-      <h4>(Drop here or click!)</h4>
+      <h3>(Drop file here or click!)</h3>
+      <h4 class="text-muted">A default data set has already been loaded</h4>
     </div>
   </div>
 </div>
@@ -19,10 +20,8 @@
 
 <div class="row">
   <h1 class="pull-center">Layout</h1>
-  <div ng-init="jsonUrl = 'networkNDV.json'">
-    <sg-nodegraph ng-controller="sgTidalDataCtrl" additional-data="additionalData" force-layout="forceLayout"
-    height="500" width="800" charge="-1200" linkDistance="80" template="views/tidal.html"></sg-nodegraph>
-  </div>
+  <h4 class="text-muted">Hover over nodes to view connected neighbors</h4>
+  <sg-nodegraph ng-controller="sgTidalDataCtrl" additional-data="additionalData" force-layout="forceLayout" height="500" width="800" charge="-1200" linkDistance="80" template="views/tidal.html"></sg-nodegraph>
 </div>
 
 <div class="footer">

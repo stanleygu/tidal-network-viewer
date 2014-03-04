@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('App')
-  .controller('sgTidalDataCtrl', function($scope, Default) {
-    //$scope.data = Default;
-    $scope.$watch('data', function(newVal) {
+  .controller('sgTidalDataCtrl', function($scope, Default, $timeout) {
+    $timeout(function() {
+      $scope.$parent.data = Default;
+    }, 500);
+    $scope.$watch('$parent.data', function(newVal) {
       if (newVal) {
         var data = newVal;
         $scope.edges = _.map(data.edges, function(edge) {
